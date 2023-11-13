@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>h3h3</title>
+  <style>
+    html{
+        background-color: black;
+    }
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #halo-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      font-size: 4em;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    #halo-text {
+      display: inline-block;
+    }
+
+    body {
+      background: linear-gradient(45deg, #3498db, #e74c3c);
+      animation: backgroundAnimation 10s infinite alternate;
+    }
+
+    #halo-text {
+      display: inline-block;
+      animation: haloAnimation 2s infinite;
+    }
+
+    .button{
+        position: absolute;
+        top: 60%;
+        left: 47.5%;
+        text-align: center;
+        animation: haloAnimation 7s infinite alternate;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    .button>a{
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    @keyframes haloAnimation {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes backgroundAnimation {
+      0% { background: linear-gradient(45deg, #3498db, #e74c3c); }
+      100% { background: linear-gradient(45deg, #e74c3c, #3498db); }
+    }
+    @keyframes backgroundAnimation {
+      0% { background: linear-gradient(45deg, #3498db, #e74c3c); }
+      100% { background: linear-gradient(45deg, #e74c3c, #3498db); }
+    }
+  </style>
+</head>
+<body>
+  <div id="halo-container">
+    <span id="halo-text"></span>
+  </div>
+  <div class="button"><a href="flower.html">This Is For You</a></div>
+
+  <script>
+    const haloText = document.getElementById('halo-text');
+    const textContent = 'Halo Sonia <3';
+    let index = 0;
+
+    function type() {
+      haloText.textContent += textContent[index];
+      index++;
+      if (index < textContent.length) {
+        setTimeout(type, 200); // Adjust the typing speed (milliseconds)
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
